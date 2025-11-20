@@ -1,0 +1,246 @@
+.interest-selection-container {
+  width: 100vw;
+  height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Content */
+.interest-content {
+  flex: 1;
+  padding: 60px 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Back Button */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #E91E63;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+.back-btn svg {
+  color: #E91E63;
+}
+
+/* Header */
+.interest-header {
+  margin-bottom: 32px;
+}
+
+.interest-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.interest-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Interest Options */
+.interest-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.interest-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 2px solid #E8E8E8;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.interest-card:hover {
+  border-color: #E91E63;
+  background: #FFF5F9;
+}
+
+.interest-card.selected {
+  border-color: #E91E63;
+  background: #FFF5F9;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.interest-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  border-radius: 12px;
+}
+
+.interest-card.selected .interest-icon {
+  background: rgba(233, 30, 99, 0.1);
+}
+
+.interest-info {
+  flex: 1;
+}
+
+.interest-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.interest-card-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.4;
+}
+
+.interest-arrow {
+  flex-shrink: 0;
+  color: #CCCCCC;
+  display: flex;
+  align-items: center;
+}
+
+.interest-card.selected .interest-arrow {
+  color: #E91E63;
+}
+
+/* Actions */
+.interest-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.continue-btn-interest {
+  width: 100%;
+  height: 56px;
+  background: #E91E63;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.continue-btn-interest:hover {
+  background: #D81B60;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+}
+
+.continue-btn-interest:active {
+  transform: translateY(0);
+}
+
+.later-btn {
+  width: 100%;
+  height: 48px;
+  background: transparent;
+  color: #666;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.later-btn:hover {
+  color: #333;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.interest-card {
+  animation: slideInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.interest-card:nth-child(1) { animation-delay: 0.05s; }
+.interest-card:nth-child(2) { animation-delay: 0.1s; }
+.interest-card:nth-child(3) { animation-delay: 0.15s; }
+.interest-card:nth-child(4) { animation-delay: 0.2s; }
+.interest-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* Responsive */
+@media (max-width: 375px) {
+  .interest-content {
+    padding: 50px 16px 20px;
+  }
+
+  .interest-title {
+    font-size: 24px;
+  }
+
+  .interest-card {
+    padding: 14px;
+  }
+
+  .interest-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (min-height: 800px) {
+  .interest-content {
+    padding: 80px 20px 40px;
+  }
+
+  .interest-options {
+    margin-bottom: 48px;
+  }
+}

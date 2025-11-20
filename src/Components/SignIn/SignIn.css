@@ -1,0 +1,417 @@
+.signin-container {
+  width: 100vw;
+  height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Dark Mode */
+.signin-container.dark {
+  background: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.signin-container.dark .form-label {
+  color: #E0E0E0;
+}
+
+.signin-container.dark .form-input {
+  background: #2A2A2A;
+  border-color: #3A3A3A;
+  color: #FFFFFF;
+}
+
+.signin-container.dark .form-input::placeholder {
+  color: #888;
+}
+
+.signin-container.dark .input-icon {
+  color: #888;
+}
+
+.signin-container.dark .signup-text {
+  color: #B0B0B0;
+}
+
+.signin-container.dark .terms-text {
+  color: #808080;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle-signin {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #E8E8E8;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.dark-mode-toggle-signin:hover {
+  background: #D8D8D8;
+}
+
+.dark-mode-toggle-signin svg {
+  color: #666;
+}
+
+.signin-container.dark .dark-mode-toggle-signin {
+  background: #2A2A2A;
+}
+
+.signin-container.dark .dark-mode-toggle-signin:hover {
+  background: #3A3A3A;
+}
+
+.signin-container.dark .dark-mode-toggle-signin svg {
+  color: #E0E0E0;
+}
+
+/* Content */
+.signin-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 30px 40px;
+}
+
+/* Logo */
+.signin-logo {
+  margin-bottom: 40px;
+}
+
+/* Header */
+.signin-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Error Alert */
+.error-alert {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #FFE8EE;
+  border: 1px solid #FFCDD9;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.error-icon {
+  flex-shrink: 0;
+}
+
+.error-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #DC3545;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.signin-container.dark .error-alert {
+  background: #3A2126;
+  border-color: #5A3136;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signin-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.signin-container.dark .signin-title {
+  color: #FFFFFF;
+}
+
+.signin-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: -0.2px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.signin-container.dark .signin-subtitle {
+  color: #B0B0B0;
+}
+
+/* Form */
+.signin-form {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  text-align: left;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: #999;
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 48px;
+  border: 2px solid #E8E8E8;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  background: #FAFAFA;
+  color: #000;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: -0.1px;
+}
+
+.form-input:focus {
+  border-color: #E91E63;
+  background: #FFFFFF;
+}
+
+.signin-container.dark .form-input:focus {
+  border-color: #E91E63;
+  background: #2A2A2A;
+}
+
+.form-input::placeholder {
+  color: #999;
+  font-weight: 400;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: #666;
+}
+
+.signin-container.dark .password-toggle {
+  color: #888;
+}
+
+.signin-container.dark .password-toggle:hover {
+  color: #B0B0B0;
+}
+
+/* Forgot Password */
+.forgot-password-btn {
+  background: none;
+  border: none;
+  color: #E91E63;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: right;
+  padding: 4px 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.forgot-password-btn:hover {
+  opacity: 0.8;
+}
+
+/* Sign In Button */
+.signin-btn {
+  width: 100%;
+  height: 56px;
+  background: #E91E63;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+  margin-top: 8px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.signin-btn:hover {
+  background: #D81B60;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+}
+
+.signin-btn:active {
+  transform: translateY(0);
+}
+
+/* Sign Up Link */
+.signup-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  margin-top: 24px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.signup-link {
+  background: none;
+  border: none;
+  color: #E91E63;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.signup-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Terms */
+.terms-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: auto;
+  padding-top: 40px;
+  max-width: 320px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signin-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+  .signin-content {
+    padding: 60px 20px 30px;
+  }
+
+  .signin-title {
+    font-size: 28px;
+  }
+
+  .signin-form {
+    max-width: 100%;
+  }
+}
+
+@media (min-height: 800px) {
+  .signin-content {
+    padding: 100px 30px 60px;
+  }
+
+  .signin-logo {
+    margin-bottom: 60px;
+  }
+
+  .signin-header {
+    margin-bottom: 60px;
+  }
+}
+
+/* Loading State */
+.signin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error States */
+.form-input.error {
+  border-color: #DC3545;
+}
+
+.error-message {
+  color: #DC3545;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+  text-align: left;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}

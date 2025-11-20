@@ -1,0 +1,618 @@
+.profile-menu-container {
+    width: 100vw;
+    height: 100vh;
+    background: #F8F8F8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .profile-menu-container.dark {
+    background: #1A1A1A;
+    color: #FFFFFF;
+  }
+  
+  /* Profile Menu Content - Scrollable */
+  .profile-menu-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 100px;
+  }
+  
+  /* Header Section */
+  .profile-menu-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .profile-menu-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .profile-menu-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E91E63 0%, #F06292 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .avatar-initial-menu {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .profile-menu-info {
+    flex: 1;
+  }
+  
+  .profile-menu-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 6px;
+  }
+  
+  .profile-menu-container.dark .profile-menu-name {
+    color: #FFFFFF;
+  }
+  
+  .profile-menu-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .badge-expert-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: #FFB800;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .badge-level-menu {
+    padding: 4px 10px;
+    background: #F5F5F5;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+  }
+  
+  .profile-menu-container.dark .badge-level-menu {
+    background: #2A2A2A;
+    color: #B0B0B0;
+  }
+  
+  .dark-mode-toggle-menu {
+    width: 40px;
+    height: 40px;
+    background: #F5F5F5;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .dark-mode-toggle-menu:hover {
+    background: #E8E8E8;
+  }
+  
+  .profile-menu-container.dark .dark-mode-toggle-menu {
+    background: #2A2A2A;
+    color: #B0B0B0;
+  }
+  
+  /* Stats Cards */
+  .profile-menu-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card-menu {
+    background: #FFFFFF;
+    border: 2px solid #F0F0F0;
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-menu-container.dark .stat-card-menu {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+  }
+  
+  .stat-value-menu {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 4px;
+  }
+  
+  .profile-menu-container.dark .stat-value-menu {
+    color: #FFFFFF;
+  }
+  
+  .stat-label-menu {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .profile-menu-container.dark .stat-label-menu {
+    color: #B0B0B0;
+  }
+  
+  /* Achievements Section */
+  .achievements-section-menu {
+    margin-bottom: 24px;
+  }
+  
+  .section-header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .section-title-menu {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .profile-menu-container.dark .section-title-menu {
+    color: #FFFFFF;
+  }
+  
+  .view-all-link-menu {
+    background: none;
+    border: none;
+    color: #E91E63;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  
+  .achievements-scroll-menu {
+    overflow-x: auto;
+    margin-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .achievements-scroll-menu::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .achievements-list-menu {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+  
+  .achievement-card-menu {
+    flex: 0 0 100px;
+    height: 100px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .achievement-icon-menu {
+    font-size: 28px;
+  }
+  
+  .achievement-title-menu {
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  .scroll-indicator-menu {
+    width: 100%;
+  }
+  
+  .scroll-track-menu {
+    width: 100%;
+    height: 3px;
+    background: #E8E8E8;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .profile-menu-container.dark .scroll-track-menu {
+    background: #3A3A3A;
+  }
+  
+  .scroll-thumb-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60%;
+    background: #333;
+    border-radius: 2px;
+  }
+  
+  /* Quantum Stats Section */
+  .quantum-stats-section-menu {
+    margin-bottom: 24px;
+  }
+  
+  .quantum-stats-card-menu {
+    background: #FFF5F9;
+    border: 2px solid #FFE8F0;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .profile-menu-container.dark .quantum-stats-card-menu {
+    background: #2A2020;
+    border-color: #3A2A2A;
+  }
+  
+  .quantum-stat-row-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #FFE8F0;
+  }
+  
+  .quantum-stat-row-menu:last-child {
+    border-bottom: none;
+  }
+  
+  .profile-menu-container.dark .quantum-stat-row-menu {
+    border-bottom-color: #3A2A2A;
+  }
+  
+  .quantum-stat-label-menu {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .profile-menu-container.dark .quantum-stat-label-menu {
+    color: #B0B0B0;
+  }
+  
+  .quantum-stat-value-menu {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .profile-menu-container.dark .quantum-stat-value-menu {
+    color: #FFFFFF;
+  }
+  
+  .hardware-badges-menu {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .hardware-badge-menu {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .hardware-badge-menu.blue {
+    background: #2196F3;
+  }
+  
+  .hardware-badge-menu.purple {
+    background: #9C27B0;
+  }
+  
+  .hardware-badge-menu.green {
+    background: #4CAF50;
+  }
+  
+  /* Subscription Section */
+  .subscription-section-menu {
+    margin-bottom: 24px;
+  }
+  
+  .subscription-bar-menu {
+    width: 100%;
+    height: 6px;
+    background: #F0F0F0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .profile-menu-container.dark .subscription-bar-menu {
+    background: #2A2A2A;
+  }
+  
+  .subscription-progress-menu {
+    height: 100%;
+    width: 80%;
+    background: linear-gradient(90deg, #E91E63 0%, #F06292 100%);
+    border-radius: 3px;
+  }
+  
+  /* Settings Menu Section */
+  .settings-menu-section {
+    margin-bottom: 16px;
+  }
+  
+  .menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #FFFFFF;
+    border: 2px solid #F0F0F0;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    border-color: #E91E63;
+    transform: translateX(4px);
+  }
+  
+  .profile-menu-container.dark .menu-item {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+  }
+  
+  .menu-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .menu-icon {
+    color: #666;
+    flex-shrink: 0;
+  }
+  
+  .profile-menu-container.dark .menu-icon {
+    color: #B0B0B0;
+  }
+  
+  .menu-item-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .profile-menu-container.dark .menu-item-text {
+    color: #FFFFFF;
+  }
+  
+  .menu-arrow {
+    color: #CCC;
+    flex-shrink: 0;
+  }
+  
+  .profile-menu-container.dark .menu-arrow {
+    color: #666;
+  }
+  
+  .menu-item-right-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .notification-badge-menu {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    background: #E91E63;
+    color: white;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Support Section */
+  .support-section-menu {
+    margin-bottom: 24px;
+  }
+  
+  .support-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .rate-item {
+    border-color: #E91E63;
+  }
+  
+  .rate-item .menu-icon,
+  .rate-item .menu-arrow {
+    color: #E91E63;
+  }
+  
+  .profile-menu-container.dark .rate-item {
+    border-color: #E91E63;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    width: 100%;
+    padding: 16px;
+    background: #F5F5F5;
+    border: none;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #E91E63;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .logout-btn:hover {
+    background: #FFE8F0;
+    transform: scale(1.02);
+  }
+  
+  .profile-menu-container.dark .logout-btn {
+    background: #2A2A2A;
+  }
+  
+  .profile-menu-container.dark .logout-btn:hover {
+    background: #3A2020;
+  }
+  
+  /* Bottom Navigation */
+  .bottom-nav-menu {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    background: #FFFFFF;
+    border-top: 1px solid #F0F0F0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 8px 0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .profile-menu-container.dark .bottom-nav-menu {
+    background: #1A1A1A;
+    border-top-color: #2A2A2A;
+  }
+  
+  .nav-item-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item-menu:hover {
+    color: #E91E63;
+  }
+  
+  .nav-item-menu.active {
+    color: #E91E63;
+  }
+  
+  .nav-item-menu svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .nav-label-menu {
+    font-size: 11px;
+    font-weight: 500;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .menu-item,
+  .stat-card-menu,
+  .achievement-card-menu {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  .settings-menu-section .menu-item:nth-child(1) { animation-delay: 0.05s; }
+  .settings-menu-section .menu-item:nth-child(2) { animation-delay: 0.1s; }
+  .settings-menu-section .menu-item:nth-child(3) { animation-delay: 0.15s; }
+  .settings-menu-section .menu-item:nth-child(4) { animation-delay: 0.2s; }
+  
+  /* Responsive */
+  @media (max-width: 375px) {
+    .profile-menu-content {
+      padding: 16px 16px 100px;
+    }
+  
+    .profile-menu-name {
+      font-size: 18px;
+    }
+  
+    .achievement-card-menu {
+      flex: 0 0 90px;
+      height: 90px;
+    }
+  
+    .menu-item {
+      padding: 14px;
+    }
+  }
