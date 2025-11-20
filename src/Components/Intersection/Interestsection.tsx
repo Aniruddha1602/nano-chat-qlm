@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactNode } from 'react';
 import './Interestsection.css';
 
 interface Interest {
   id: string;
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: ReactNode;
   color: string;
 }
 
@@ -110,22 +110,9 @@ const InterestSelection: React.FC<InterestSelectionProps> = ({ onComplete }) => 
 
   return (
     <div className="interest-selection-container">
-      {/* Status Bar */}
-      <div className="status-bar">
-        <span className="time">9:41</span>
-        <div className="status-icons">
-          <div className="battery"></div>
-        </div>
-      </div>
+      
 
-      {/* Dark Mode Toggle */}
-      <button className="dark-mode-toggle">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
-
-      {/* Content */}
+      {/* Scrollable Content */}
       <div className="interest-content">
         {/* Back Button */}
         <button className="back-btn" onClick={handleBack}>

@@ -131,6 +131,12 @@ const Home: React.FC<HomeProps> = ({ userName = 'Sarah', isDarkMode, onToggleDar
     console.log('View learn item:', learnId);
   };
 
+  // Handler to prevent clicks on disabled nav items
+  const handleDisabledClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <div className={`home-container ${isDarkMode ? 'dark' : ''}`}>
       {/* Header */}
@@ -160,13 +166,13 @@ const Home: React.FC<HomeProps> = ({ userName = 'Sarah', isDarkMode, onToggleDar
               <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </button>
-          <button className="header-icon-btn notification-btn">
+          {/* <button className="header-icon-btn notification-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <span className="notification-dot"></span>
-          </button>
+          </button> */}
         </div>
       </header>
 
@@ -189,7 +195,13 @@ const Home: React.FC<HomeProps> = ({ userName = 'Sarah', isDarkMode, onToggleDar
         {/* Search Input */}
         <div className="search-section">
           <div className="search-input-wrapper">
-           <p>What do you want solve today? </p>
+            <input 
+              type="text"
+              className="search-input"
+              placeholder="What do you want solve today?"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <div className="input-actions">
               <button 
                 className={`input-mode-btn ${inputMode === 'speak' ? 'active' : ''}`}
@@ -385,7 +397,11 @@ const Home: React.FC<HomeProps> = ({ userName = 'Sarah', isDarkMode, onToggleDar
         </button>
 
         {/* DISABLED: Learn */}
-        <button className="nav-item disabled" disabled>
+        <button 
+          className="nav-item disabled" 
+          onClick={handleDisabledClick}
+          disabled
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
             <path d="M12 16V12M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
@@ -394,7 +410,11 @@ const Home: React.FC<HomeProps> = ({ userName = 'Sarah', isDarkMode, onToggleDar
         </button>
 
         {/* DISABLED: Library */}
-        <button className="nav-item disabled" disabled>
+        <button 
+          className="nav-item disabled" 
+          onClick={handleDisabledClick}
+          disabled
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

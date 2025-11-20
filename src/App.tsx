@@ -119,7 +119,7 @@ const App: React.FC = () => {
           onNavigate={handleNavigate}
         />
       );
-    }
+    } 
 
     if (activeTab === 'profile') {
       return (
@@ -162,22 +162,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {/* Status Bar */}
-      <div className="status-bar">
-        <span className="time">9:41</span>
-        <div className="status-icons">
-          <div className="battery"></div>
-        </div>
-      </div>
-
-      {/* Dark Mode Toggle */}
-      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
-
-      {/* Main Content */}
+      {/* Main Scrollable Content */}
       <div className="onboarding-content">
         {/* Logo / Icon */}
         {slides[currentSlide].showLogo ? (
@@ -232,7 +217,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Actions */}
-        <div className="actions">
+        <div className="actions" style={{ marginBottom: '32px' }}>
           <button className="continue-btn" onClick={handleContinue}>
             {currentSlide === slides.length - 1 ? 'Get Started' : 'Continue'}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

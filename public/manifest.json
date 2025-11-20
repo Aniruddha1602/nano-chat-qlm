@@ -1,0 +1,40 @@
+{
+  "short_name": "ChatQLM",
+  "name": "ChatQLM - AI Problem Solver",
+  "description": "The first AI that solves your problems using quantum computers and supercomputing",
+  "icons": [
+   
+    {
+        "src": "/public/icons/app-icon.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "/public/icons/app-icon.png",
+        "type": "image/png",
+        "sizes": "160x160"
+      },
+      {
+        "src": "/public/icons/app-icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/public/icons/app-icon.png",
+        "type": "image/png",
+        "sizes": "360x360"
+      },
+      {
+        "src": "/public/icons/app-icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "prefer_related_applications": false
+}   
